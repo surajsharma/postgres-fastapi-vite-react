@@ -1,0 +1,27 @@
+{
+    "name": "frontend",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite --host",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "custom-modal-react": "^1.0.0",
+        "drag-react": "^1.1.0",
+        "lodash": "^4.17.21",
+        "react": "^18.2.0",
+        "react-beautiful-dnd": "^13.1.0",
+        "react-dom": "^18.2.0",
+        "react-draggable": "^4.4.5",
+        "react-modal": "^3.15.1"
+    },
+    "devDependencies": {
+        "@types/react": "^18.0.17",
+        "@types/react-dom": "^18.0.6",
+        "@vitejs/plugin-react": "^2.0.1",
+        "vite": "^3.0.7"
+    }
+}
