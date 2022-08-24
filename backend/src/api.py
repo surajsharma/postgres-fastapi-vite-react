@@ -60,7 +60,6 @@ async def db_seed():
 @app.get("/items", response_model=List[Item], status_code=status.HTTP_200_OK)
 async def get_items():
     """get all items"""
-
     items = db.query(models.Item).all()
     return items
 

@@ -14,7 +14,14 @@ services:
             POSTGRES_DB: vector
         networks:
             - local
-
+    adminer:
+        image: adminer:latest
+        environment:
+            ADMINER_DEFAULT_SERVER: postgres
+        ports:
+            - 8080:8080
+        networks:
+            - local
     backend:
         networks:
             - local
@@ -24,15 +31,14 @@ services:
             - "8000:8000"
         depends_on:
             - postgres
+        volumes:
+            - ./backend/src:/backend/src
 
     frontend:
         networks:
             - local
         build: ./frontend
         command: npm run dev
-        volumes:
-            - .:/usr/src/app
-            - /usr/src/app/node_modules
         restart: always
         ports:
             - "5173:5173"
@@ -41,6 +47,9 @@ services:
             - backend
         extra_hosts:
             - "host.docker.internal:host-gateway"
+        volumes:
+            - ./frontend:/frontend
+            - /frontend/node_modules
 
 networks:
     local:

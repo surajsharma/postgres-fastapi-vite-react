@@ -1,4 +1,4 @@
-import { useState, useEffect, useReducer, useCallback } from "react";
+import { useEffect, useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
 import isEqual from "lodash/isEqual";
@@ -31,9 +31,13 @@ function App() {
     useEffect(() => {
         const init = async () => {
             const i = await getItems();
-            const seeded = await seedIfEmpty();
+
             if (i.length) {
                 const newItems = await getImages(i);
+                setItems(newItems);
+            } else {
+                const seeded = await seedIfEmpty();
+                const newItems = await getImages(seeded);
                 setItems(newItems);
             }
         };
