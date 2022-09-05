@@ -1,4 +1,6 @@
-# Vector.ai challenge
+# FastAPI Postgres React (vite) template
+
+A basic dockerised CRUD FastAPI implementation with postgres db, served with react using vite.
 
 ### 🏃‍♂️ How To Run
 
@@ -10,8 +12,9 @@
 
 ### 🐛 Known Bugs
 
--   If the cards get stuck on loading spinner instead of the images **for more than 5 seconds**, just do a refresh.
--   If you see less than 5 cards after dragging/dropping try and drag/drop a card again.
+- A basic frontend app is bundled for demo purposes
+- If the cards get stuck on loading spinner instead of the images **for more than 5 seconds**, just do a refresh.
+- If you see less than 5 cards after dragging/dropping try and drag/drop a card again.
 
 ### ⏲ Time Taken
 
